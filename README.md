@@ -42,13 +42,13 @@ After placing an order, both the customer and administrator receive notification
 
 1. Installing the Module:
     - Copy the module files to the app/code directory of your Magento 2 installation.
-    - Run the command php bin/magento setup:upgrade to install the module.
-    - Run the command php bin/magento setup:static-content:deploy if necessary to update static resources.
+    - Run the command **php bin/magento setup:upgrade** to install the module.
+    - Run the command **php bin/magento setup:static-content:deploy** if necessary to update static resources.
 
 2. Configuring Module Parameters:
     - Navigate to the Magento admin panel.
     - Configure prices and other parameters for each product sample.
-    - Set the is_sample_order attribute for products that should be available as samples.
+    - Set the **is_sample_product** attribute for products that should be available as samples.
 
 3. Using the Module by Customers:
     - Customers can add samples to their cart like any other product.
