@@ -1,0 +1,24 @@
+<?php
+/** @var $block AddSample */
+/** @var $escaper Escaper */
+
+use PeachCode\SampleProduct\Block\Product\AddSample;
+use Magento\Framework\Escaper;
+
+$product = $block->getProduct();
+
+if($block->isSampleAvailable($product)) : ?>
+
+<form class="form form-sample" action="<?= $escaper->escapeHtml($block->getAddSampleUrl());?>" method="POST" id="form-validate"
+      enctype="multipart/form-data" autocomplete="off">
+    <?php echo $block->getBlockHtml('formkey') ?>
+    <label for="sample_price"><?= $escaper->escapeHtml(__('Sample Price: '));?><?= $block->samplePrice($product);?></label>
+    <br>
+    <label for="sample_product_id"></label>
+    <input hidden type="number" value="<?= $escaper->escapeHtml($product->getId());?>" name="sample_product_id" id="sample_product_id" />
+    <button class="action secondary samplebutton" type="submit" title="<?= $escaper->escapeHtml(__('Add to Samples Cart'));?>">
+        <span><?= $escaper->escapeHtml(__('Order a Sample'));?></span>
+    </button>
+</form>
+
+<?php endif; ?>

@@ -1,0 +1,15 @@
+<?php
+
+/** @var $block ViewHeader */
+/** @var $escaper Escaper */
+
+use PeachCode\SampleProduct\Block\Adminhtml\Order\ViewHeader;
+use Magento\Framework\Escaper;
+
+$order = $block->getOrder(); ?>
+
+<div>
+    <?= $escaper->escapeHtml(__('Delivery Address')); ?>
+    <div> <?= /* @noEscape */ $order->getHtmlAddress(); ?></div>
+</div>
+

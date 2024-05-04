@@ -1,0 +1,59 @@
+<?php
+
+/** @var  $block Recent */
+/** @var $escaper Escaper */
+
+use PeachCode\SampleProduct\Block\Orders\Recent;
+use Magento\Framework\Escaper;
+?>
+
+<div class="block block-dashboard-orders">
+<?php $_orders = $block->getOrders(); ?>
+    <div class="block-title order">
+        <strong>
+            <?= $escaper->escapeHtml(__('Recent Sample Product Orders'));?></strong>
+        <?php if (sizeof($_orders->getItems()) > 0): ?>
+            <a class="action view" href="<?php /* @escapeNotVerified */ echo $block->getUrl('sampleproduct/order/history') ?>">
+                <span><?= $escaper->escapeHtml(__('View All'));?></span>
+            </a>
+        <?php endif; ?>
+    </div>
+    <div class="block-content">
+    <?php echo $block->getChildHtml()?>
+    <?php if (sizeof($_orders->getItems()) > 0): ?>
+        <div class="table-wrapper orders-recent">
+            <table class="data table table-order-items recent" id="my-orders-table">
+                <caption class="table-caption"><?= $escaper->escapeHtml(__('Recent Sample Product Orders'));?></caption>
+                <thead>
+                    <tr>
+                        <th scope="col" class="col id"><?= $escaper->escapeHtml(__('Order #'));?></th>
+                        <th scope="col" class="col date"><?= $escaper->escapeHtml(__('Date'));?></th>
+                        <th scope="col" class="col total"><?= $escaper->escapeHtml(__('Total Quantity'));?></th>
+                        <th scope="col" class="col actions"><?= $escaper->escapeHtml(__('Action'));?></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($_orders as $_order): ?>
+                        <tr>
+                            <td data-th="<?= $escaper->escapeHtml(__('Order #'));?>" class="col id"><?= $escaper->escapeHtml($_order->getId()) ?></td>
+                            <td data-th="<?= $escaper->escapeHtml(__('Date'));?>" class="col date"><?= $escaper->escapeHtml($block->formatDate($_order->getCreatedAt())) ?></td>
+                            <td data-th="<?= $escaper->escapeHtml(__('Total Quantity'));?>" class="col total"><?= $escaper->escapeHtml($_order->getTotalItems()) ?></td>
+                            <td data-th="<?= $escaper->escapeHtml(__('Action'));?>" class="col actions">
+                                <a href="<?= $block->getViewUrl($_order) ?>" class="action view">
+                                    <span><?= $escaper->escapeHtml(__('View Order'));?></span>
+                                </a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    <?php else: ?>
+        <div class="message info empty">
+            <span>
+                <?= $escaper->escapeHtml(__('You have not placed any Sample Product orders.'));?>
+            </span>
+        </div>
+    <?php endif; ?>
+    </div>
+</div>

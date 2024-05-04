@@ -1,0 +1,15 @@
+<?php
+/** @var $block ViewHeader */
+/** @var $escaper Escaper */
+
+use PeachCode\SampleProduct\Block\Adminhtml\Order\ViewHeader;
+use Magento\Framework\Escaper;
+
+$order = $block->getOrder();
+?>
+<div>
+    <div><?= $escaper->escapeHtml(__('Created At:'));?> <?= $escaper->escapeHtml($order->getCreatedAt());?></div>
+    <div><?= $escaper->escapeHtml(__('Total Items:'));?> <?= $escaper->escapeHtml($order->getTotalItems());?></div>
+    <div><?= $escaper->escapeHtml(__('Email Sent:'));?> <?= $escaper->escapeHtml($order->getEmailSent() ? "Yes" : "No");?></div>
+</div>
+

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="PeachCode" translate="label" sortOrder="1">
+            <label>PeachCode</label>
+        </tab>
+        <section id="sampleproduct" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>SampleProduct Settings</label>
+            <tab>PeachCode</tab>
+            <resource>PeachCode_SampleProduct::system_config</resource>
+            <group id="cart" translate="label" type="text" sortOrder="1" showInDefault="1">
+                <label>Cart Settings</label>
+                <field id="itemlimit" translate="label" type="text" sortOrder="3"  showInDefault="1">
+                    <label>Maximum Items in cart</label>
+                    <comment>Maximum Items in SampleProduct cart.</comment>
+                    <validate>validate-number</validate>
+                </field>
+            </group>
+            <group id="product" translate="label" type="text" sortOrder="2" showInDefault="1">
+                <label>Product Settings</label>
+                <field id="sampleattribute" translate="label" type="select" sortOrder="1" showInDefault="1">
+                    <label>Sample Attribute</label>
+                    <source_model>PeachCode\SampleProduct\Model\Config\Backend\YesNoAttributes</source_model>
+                    <comment>Attribute to be used to determine if a sample is available. (Only Yes/No attributes allowed)</comment>
+                </field>
+            </group>
+            <group id="email" translate="label" type="text" sortOrder="3" showInDefault="1">
+                <label>Email Settings</label>
+                <field id="destination" translate="label" type="text" sortOrder="1"  showInDefault="1">
+                    <label>Destination Email</label>
+                    <comment>All sample order confirmation emails will be sent to this email address.</comment>
+                    <validate>validate-email</validate>
+                </field>
+                <field id="error" translate="label" type="text" sortOrder="2"  showInDefault="1">
+                    <label>Error Email</label>
+                    <comment>This address will receive emails when the original order email fails.</comment>
+                    <validate>validate-email</validate>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
+

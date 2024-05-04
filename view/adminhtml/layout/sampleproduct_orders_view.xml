@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.inner.left">
+        <block class="PeachCode\SampleProduct\Block\Adminhtml\Order\ViewHeader" name="sampleproduct.header.left" template="order/header-left.phtml"/>
+        </referenceContainer>
+
+        <referenceContainer name="header.inner.right">
+            <block class="PeachCode\SampleProduct\Block\Adminhtml\Order\ViewHeader" name="sampleproduct.header.right" template="order/header-right.phtml"/>
+        </referenceContainer>
+
+        <referenceContainer name="content">
+            <block class="PeachCode\SampleProduct\Block\Adminhtml\Order\ViewGrid" name="sampleproduct.grid.container"/>
+        </referenceContainer>
+    </body>
+</page>

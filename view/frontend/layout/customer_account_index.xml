@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="PeachCode\SampleProduct\Block\Orders\Recent" name="customer_sample_orders_recent" after="customer_account_dashboard_top" template="orders/recent.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

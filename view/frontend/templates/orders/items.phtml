@@ -1,0 +1,36 @@
+<?php
+
+ /** @var $block Info */
+/** @var $escaper Escaper */
+
+use PeachCode\SampleProduct\Block\Orders\Info;
+use Magento\Framework\Escaper;
+
+$_order = $block->getOrder() ?>
+<div class="table-wrapper order-items">
+    <table class="data table table-order-items" id="my-orders-table" summary="<?= $escaper->escapeHtml(__('Items Ordered'));?>">
+        <caption class="table-caption"><?= $escaper->escapeHtml(__('Samples Ordered'));?></caption>
+        <thead>
+            <tr>
+                <th class="col name"><?= $escaper->escapeHtml(__('Product Name'));?></th>
+                <th class="col sku"><?= $escaper->escapeHtml(__('SKU'));?></th>
+                <th class="col qty"><?= $escaper->escapeHtml(__('Qty'));?></th>
+                <th class="col price"><?= $escaper->escapeHtml(__('Price'));?></th>
+            </tr>
+        </thead>
+        <?php
+        $_items = $_order->getAllItems();
+        $_index = 0;
+        $_count = $_items->count();
+        foreach ($_items as $_item): ?>
+            <tbody>
+                    <tr>
+                        <td class="col name"><?= $escaper->escapeHtml($_item->getName()) ?></td>
+                        <td class="col sku"><?= $escaper->escapeHtml($_item->getSku()) ?></td>
+                        <td class="col qty"><?= $escaper->escapeHtml(1); ?></td>
+                        <td class="col price"><?= $block->convertValue($_item->getPrice()); ?></td>
+                    </tr>
+            </tbody>
+        <?php endforeach; ?>
+    </table>
+</div>

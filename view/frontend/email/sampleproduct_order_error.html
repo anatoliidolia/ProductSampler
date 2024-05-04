@@ -1,0 +1,13 @@
+<!--@subject SampleProduct Order Error @-->
+
+<div>
+    <p>{{trans 'There was an error with SampleProduct order <span class="no-link">#%increment_id</span>' increment_id=$order_id |raw}} <br/>
+
+        <strong>The email for processing the order was not sent.</strong>
+    </p>
+
+    The error message is:
+
+    <p>{{var errorMessage}} </p>
+    <p>{{var stackTrace}}</p>
+</div>

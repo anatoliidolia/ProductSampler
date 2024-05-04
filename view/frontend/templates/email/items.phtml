@@ -1,0 +1,45 @@
+<?php
+
+use PeachCode\SampleProduct\Block\Orders\Info;
+use PeachCode\SampleProduct\Block\Orders\Email\Items;
+
+ /* @var Info $order */
+ /* @var Items $block */
+
+$order = $block->getOrder();
+
+if ($order): ?>
+    <table style="width: 100%; text-align: center;">
+        <thead>
+        <tr>
+            <th class="item-qty item-data-sample">
+                <?= $escaper->escapeHtml(__('Qty'));?>
+            </th>
+            <th class="item-sku item-data-sample">
+                <?= $escaper->escapeHtml(__('Sample'));?>
+            </th>
+            <th class="item-price item-data-sample">
+                <?= $escaper->escapeHtml(__('Total'));?>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php $items = $block->getAllItems($order); ?>
+        <?php foreach ($items as $item): ?>
+            <tr>
+                <th class="item-qty item-data-sample">
+                    1
+                </th>
+                <th class="item-sku item-data-sample" >
+                    <?= $escaper->escapeHtml($item->getName()) ?>
+                    <br/>
+                    <?= $escaper->escapeHtml($item->getSku()) ?>
+                </th>
+                <th class="item-price item-data-sample">
+                    <?= $escaper->escapeHtml($item->getPrice());?>
+                </th>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+<?php endif; ?>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="PeachCode_SampleProduct::sampleproduct"
+             title="Sample Product"
+             module="PeachCode_SampleProduct"
+             sortOrder="10"
+             resource="PeachCode_SampleProduct::sampleproduct" />
+        <add id="PeachCode_SampleProduct::orders"
+             title="Sample Orders"
+             module="PeachCode_SampleProduct"
+             sortOrder="20"
+             parent="PeachCode_SampleProduct::sampleproduct"
+             action="sampleproduct/orders"
+             resource="PeachCode_SampleProduct::sampleproduct" />
+        <add id="PeachCode_SampleProduct::system_config"
+             title="Configuration"
+             module="PeachCode_SampleProduct"
+             sortOrder="12"
+             parent="PeachCode_SampleProduct::sampleproduct"
+             action="adminhtml/system_config/edit/section/sampleproduct"
+             resource="PeachCode_SampleProduct::system_config" />
+    </menu>
+</config>

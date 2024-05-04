@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="sampleproduct_order" label="SampleProduct Order" file="sampleproduct_order.html" type="html" module="PeachCode_SampleProduct" area="frontend"/>
+    <template id="sampleproduct_order_error" label="SampleProduct Order Error" file="sampleproduct_order_error.html" type="html" module="PeachCode_SampleProduct" area="frontend"/>
+</config>
