@@ -16,6 +16,7 @@ If a product has all the necessary configurations , a block like this will appea
 ### Notification to Admin on Sample Orders
 
 If a price is specified for a sample, the administrator receives a notification about the sample purchase with the specified price. If no price is specified, the administrator receives a notification without a price to track sample orders.
+
 ![img_2.png](img_2.png)
 
 ### Managing Sample Orders in User Account
@@ -28,12 +29,13 @@ Users can view all their sample orders in their personal account with details ab
 
 For each product sample, you can configure:
 - The sample price.
-- The is_sample_order attribute, which determines if the product is available as a sample.
+- The **is_sample_product** attribute, which determines if the product is available as a sample.
 - Maximum quantity of samples in one order.
 
 ### Admin Notifications and Order Management
 
 After placing an order, both the customer and administrator receive notifications with details about sample orders. The administrator can view and manage all sample orders through the Magento admin panel.
+
 ![img_5.png](img_5.png)
 ![img_6.png](img_6.png)
 ![img_7.png](img_7.png)
