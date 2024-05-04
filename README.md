@@ -45,7 +45,7 @@ After placing an order, both the customer and administrator receive notification
 1. Installing the Module:
 
     - Copy the module files to the app/code directory of your Magento 2 installation.
-    - OR **composer require peachcode/sampleproduct**
+    - OR **composer require peachcode/sampleproduct:dev-main**
  
   - Run the command **php bin/magento setup:upgrade** to install the module.
   - Run the command **php bin/magento setup:static-content:deploy** if necessary to update static resources.
